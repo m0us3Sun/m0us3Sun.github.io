@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo 的搭建</title>
+    <url>/2020/04/23/hexo20200423/</url>
+    <content><![CDATA[<blockquote class="blockquote-center">
+<p> 哲学家们只是用不同的方式解释世界，
+而问题在于改变世界。</p>
+</blockquote>
+
+<p>前面已经讲过了，在很早就有写博客的冲动，现在博客搭建好了，那就写下搭建博客的过程，以免过后遗忘。</p>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>Hexo是一个快速、简洁且高校的博客框架，要想安装Hexo需要安装以下依赖：</p>
+<ul>
+<li>Node.js <a href="http://nodejs.cn/" target="_blank" rel="noopener">官网</a></li>
+<li>npm</li>
+<li>git<a href="https://git-scm.com/" target="_blank" rel="noopener">官网</a></li>
+</ul>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><p>下载node.js并安装（kali），如果默认安装npm，可以忽略下面的步骤。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br></pre></td></tr></table></figure></li>
+<li><p>下载安装npm</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install npm</span><br></pre></td></tr></table></figure></li>
+<li><p>下载安装git,由于我是kai系统，自带git，没有的可以自行搜索下载。</p>
+</li>
+<li><p>下载安装hexo</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cil</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="生成你的第一篇文章"><a href="#生成你的第一篇文章" class="headerlink" title="生成你的第一篇文章"></a>生成你的第一篇文章</h2><ul>
+<li>新建一个文件夹，Bolg</li>
+<li>cd 到该文件夹下，打开终端，输入：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init #（生成hexo模板）</span><br><span class="line">hexo new post</span><br></pre></td></tr></table></figure></li>
+<li>会在soucre &gt; _posts &gt; 文件夹内生成一个 post.md 的文件。</li>
+<li>编辑该文件（遵循Markdown规则）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: My awesome title</span><br><span class="line">date: 2016-10-12 18:38:45</span><br><span class="line">categories: </span><br><span class="line">    - 分类1</span><br><span class="line">    - 分类2</span><br><span class="line">tags: </span><br><span class="line">    - 标签1</span><br><span class="line">    - 标签2</span><br><span class="line">mp3: http:&#x2F;&#x2F;domain.com&#x2F;awesome.mp3</span><br><span class="line">cover: http:&#x2F;&#x2F;domain.com&#x2F;awesome.jpg</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<ul>
+<li>hexo g 生成本地静态文件（public目录）</li>
+<li>最后运行:hexo sercer (运行程序，访问本地localhost：4000)，如下图所示，表示成功了。<br><img src="/img/hexo/hexo-s.png" alt=""><h3 id="文章内插入图片"><a href="#文章内插入图片" class="headerlink" title="文章内插入图片"></a>文章内插入图片</h3></li>
+<li>如果想插入上面的图片，用下面的命令<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![](&#x2F;img&#x2F;hexo&#x2F;hexo-s.png)</span><br></pre></td></tr></table></figure>
+<h2 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a>个性化设置</h2><h3 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h3>我用的主题是<a href="https://github.com/Fechin/hexo-theme-diaspora" target="_blank" rel="noopener">hexo-theme-diaspora</a><br>在blog目录下运行下面的命令。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;Fechin&#x2F;hexo-theme-diaspora.git themes&#x2F;diaspora</span><br></pre></td></tr></table></figure>
+<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3></li>
+</ul>
+<p>修改Hexo配置文件 _config.yml 主题项设置为diaspora</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">theme: diaspora</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建分类页"><a href="#创建分类页" class="headerlink" title="创建分类页"></a>创建分类页</h3><ol>
+<li>新建一个页面，命名为 categories 。命令如下：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编辑刚新建的页面，将页面的类型设置为 categories</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: categories</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>主题将自动为这个页面显示所有分类。</p>
+<p>###创建标签页</p>
+<ol>
+<li>新建一个页面，命名为 tags 。命令如下：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>编辑刚新建的页面，将页面的类型设置为 tags</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>主题将自动为这个页面显示所有标签。</p>
+<p>###创建搜索页</p>
+<ol>
+<li>需要安装hexo的搜索插件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>配置hexo全局配置文件（请将生成的索引文件放在网站根目录或修改主题js文件的path值）<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure></li>
+<li>新建一个页面，命名为 search 。命令如下：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page search</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>编辑刚新建的页面，将页面的类型设置为 search</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: search</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;search&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>在主题配置文件启用本地搜索</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#本地搜索,请将索引文件放在网站根目录</span><br><span class="line">local_search:</span><br><span class="line">    #是否启用</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
+<p>主题将自动为这个页面显示搜索功能。</p>
+<p>##同步到github</p>
+<ol>
+<li>需要先注册在<a href="https://github.com/" target="_blank" rel="noopener">github</a>注册帐号，打开github，点击<strong>New repository</strong>，创建一个新仓库，仓库名必须要遵守格式：<strong>账户名.github.io</strong><br>并且需要勾选<strong>Initialize this repository with a README</strong>。</li>
+<li>访问<strong>账户名.github.io</strong>这就是你博客的网页，只不过现在还没东西，需要将你<strong>hexo</strong>的静态文件<strong>hexo d</strong>同步到<strong>github</strong>上。</li>
+</ol>
+<h3 id="连接hexo和git"><a href="#连接hexo和git" class="headerlink" title="连接hexo和git"></a>连接hexo和git</h3><ol>
+<li>设置你的用户名称与邮件地址，如果是第一次使用git的话，设置的是你github的地址。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name m0us3Sun</span><br><span class="line">$ git config --global user.email xx@qq.com</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址</p>
+</blockquote>
+<p>配置好之后可以使用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config -l</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>git添加ssh key</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;xx@qq.com&quot;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>会在用户目录下生成 .ssh 文件夹，内生成id_rsa和id_rsa.pub，id_rsa.pub 为公钥地址。</p>
+</li>
+<li><p>打开github，setting &gt; SSH and GPG keys &gt; New SSH key，复制id_rsa.pub的内容。</p>
+</li>
+<li><p>测试ssh是否添加成功。</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<h2 id="最后同步"><a href="#最后同步" class="headerlink" title="最后同步"></a>最后同步</h2><ol>
+<li>切换到blog文件夹，找到_config.yml文件，修改repositoryde值（在末尾）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https:&#x2F;&#x2F;github.com&#x2F;m0us3Sun&#x2F;m0us3Sun.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>hexo d 大功告成，访问<a href="https://m0us3Sun.github.io" target="_blank" rel="noopener">https://m0us3Sun.github.io</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术研究</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/04/23/hello-world/</url>
+    <content><![CDATA[<blockquote class="blockquote-center">
+人生最难的就是在热爱和生计之间做选择
+
+<p>愿每个人这一生</p>
+<p>既对得起梦想又担得起生活的责任</blockquote></p>
+<p>Welcome to My bolg, This is My very first post. </p>
+<p>Hello World 世界,你好，世界上的第一个程序就是Hello World，我的第一篇博客也送给世界。<br>在很早以前，就有打算写博客的冲动，苦于没有时间(其实就是技术还不过关)。记录自己在工作，在生活中碰到的点滴，以后也有时间可以回头翻一翻，沉淀自己，按照正常来说，我是想写一个技术类的博客，可是当一切就绪，发现自己还是有一个诗人的心，总想抒情一下。(不要打我！)李荣浩的&lt;李白&gt;红遍半边天的时候,很喜欢其中一句歌词”如果能重来，我想选李白”</p>
+]]></content>
+      <categories>
+        <category>Ablout me</category>
+      </categories>
+      <tags>
+        <tag>Ablout me</tag>
+      </tags>
+  </entry>
+</search>
